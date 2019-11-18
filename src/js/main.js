@@ -50,7 +50,7 @@ function postList() {
     method: "GET",
     dataType: "JSON",
     success: responseJSON => {
-      if (!responseJSON.posts.isEmpty()) {
+      if (!responseJSON.posts === undefined) {
         responseJSON.posts.forEach(element => {
           console.log(element.title);
           addValueToList(element);
