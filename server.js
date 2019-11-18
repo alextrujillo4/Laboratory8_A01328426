@@ -1,16 +1,17 @@
-let express = require('express');
-let bodyParser = require('body-parser');
+let express = require( "express" );
+let morgan = require( "morgan" );
 let mongoose = require( "mongoose" );
-let morgan = require('morgan');
-let uuidv4 = require('uuid/v4');
+let bodyParser = require( "body-parser" );
 let { PostList } = require('./blog-post-model');
 const { DATABASE_URL, PORT } = require( './config' );
+
 let app = express();
 let jsonParser = bodyParser.json();
 mongoose.Promise = global.Promise;
 
-app.use(express.static('public'));//Say to my server were gonna user public directory
-app.use(morgan("dev"));
+app.use( express.static( "public" ) );
+
+app.use( morgan( "dev" ) );
 
 /*
 const Post = {
@@ -233,8 +234,9 @@ app.put("/blog-posts/:id", jsonParser, (req, res) => {
         });
     }
 
-})
+});
 
+let server;
 
 function runServer(port, databaseUrl){
     return new Promise( (resolve, reject ) => {
