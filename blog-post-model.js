@@ -2,12 +2,10 @@ let mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 let postSchema = mongoose.Schema({
-    firstName : { type : String },
-    lastName : { type : String },
     title : { type : String },
     content : { type : String },
     author: { type : String },
-    publishDate : { type: Date},
+    publishDate : { type: String },
     id : {type : Number, required : true }
 });
 let Post = mongoose.model( 'Post', postSchema );
