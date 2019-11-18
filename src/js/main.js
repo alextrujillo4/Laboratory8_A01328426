@@ -63,9 +63,9 @@ function postList() {
 
 function addPost() {
   console.log("addPost()");
-  let button = document.getElementById("dialogButton");
-  button.addEventListener("click", function(event) {
+  $("#dialogButton").on("click", function(event)  {
     event.preventDefault();
+    console.log("Clicked... addPost()");
     console.log(author.value);
     console.log(title.value);
     console.log(content.value);
@@ -85,7 +85,6 @@ function addPost() {
       snackbar.open();
       return;
     }
-
     console.log("calling...");
     $.ajax({
       url: URL + "/blog-posts",
@@ -116,6 +115,7 @@ function addPost() {
 }
 
 function deletePost() {
+  console.log("deletePost()");
   $("ul").on("click", ".delete-button", function(event) {
     event.preventDefault();
     let card_selected = $(this)

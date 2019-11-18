@@ -153,7 +153,7 @@ app.post("/blog-posts", jsonParser, (req, res) => {
 });
 
 
-/*
+
 app.get("/blog-post", (req, res) => {
     console.log("blog-post")
     let author = req.query.author;
@@ -235,8 +235,6 @@ app.put("/blog-posts/:id", jsonParser, (req, res) => {
     }
 
 })
-*/
-
 
 
 function runServer(port, databaseUrl){
