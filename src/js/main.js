@@ -1,25 +1,19 @@
+console.log("Inicio");
 import "../index.html";
 import "../scss/style.scss";
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
-import { MDCFloatingLabel } from "@material/floating-label";
 import { MDCSnackbar } from "@material/snackbar";
 const author = new MDCTextField(document.querySelector(".author"));
 const title = new MDCTextField(document.querySelector(".title"));
 const content = new MDCTextField(document.querySelector(".content"));
 const snackbar = new MDCSnackbar(document.querySelector(".mdc-snackbar"));
-
 const author_edit = new MDCTextField(document.querySelector(".author-edit"));
 const title_edit = new MDCTextField(document.querySelector(".title-edit"));
 const content_edit = new MDCTextField(document.querySelector(".content-edit"));
-
 const dialog = new MDCDialog(document.querySelector(".mdc-dialog"));
-const dialog_edit = new MDCDialog(
-  document.querySelector(".mdc-dialog---editable")
-);
-
+const dialog_edit = new MDCDialog(document.querySelector(".mdc-dialog---editable"));
 var SELECTED_ID = "";
-
 function addValueToList(element) {
   $("#post_list").append(`
   <li class="mdc-layout-grid__cell">
@@ -64,7 +58,9 @@ function postList() {
 }
 
 function addPost() {
-  $("#addBtn").on("click", function(event) {
+  console.log("addPost()");
+  let button = document.getElementById("dialogButton");
+  button.addEventListener("click", function(event) {
     event.preventDefault();
     console.log(author.value);
     console.log(title.value);
