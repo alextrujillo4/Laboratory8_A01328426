@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@material/floating-label": "^3.2.0",
-    "@material/snackbar": "^3.2.0"
+    "@material/snackbar": "^3.2.0",
+    "mongoose": "^5.7.11"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
