@@ -63,7 +63,7 @@ function postList() {
 
 function addPost() {
   console.log("addPost()");
-  $("#dialogButton").on("click", function(event)  {
+  $("#addBtn").on("click", function(event)  {
     event.preventDefault();
     console.log("Clicked... addPost()");
     console.log(author.value);

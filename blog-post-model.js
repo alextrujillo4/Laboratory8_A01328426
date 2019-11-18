@@ -1,18 +1,16 @@
 let mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-
 let postSchema = mongoose.Schema({
     firstName : { type : String },
     lastName : { type : String },
     title : { type : String },
     content : { type : String },
     author: { type : String },
-    publishDate : { type: Date, default: Date.now },
+    publishDate : { type: Date},
     id : {type : Number, required : true }
 });
 let Post = mongoose.model( 'Post', postSchema );
-
 
 let PostList = {
     get : function(){
