@@ -14,6 +14,7 @@ const content_edit = new MDCTextField(document.querySelector(".content-edit"));
 const dialog = new MDCDialog(document.querySelector(".mdc-dialog"));
 const dialog_edit = new MDCDialog(document.querySelector(".mdc-dialog---editable"));
 var SELECTED_ID = "";
+const URL = "https://pure-ocean-83544.herokuapp.com";
 function addValueToList(element) {
   $("#post_list").append(`
   <li class="mdc-layout-grid__cell">
@@ -43,8 +44,9 @@ function addValueToList(element) {
 `);
 }
 function postList() {
+  console.log("postList()");
   $.ajax({
-    url: "http://localhost:8080/blog-posts",
+    url: URL + "/blog-posts",
     method: "GET",
     dataType: "JSON",
     success: responseJSON => {
@@ -82,8 +84,9 @@ function addPost() {
       return;
     }
 
+    console.log("calling...");
     $.ajax({
-      url: "http://localhost:8080/blog-posts",
+      url: URL + "/blog-posts",
       method: "POST",
       contentType: "application/json",
       data: JSON.stringify({
@@ -122,7 +125,7 @@ function deletePost() {
     let card_id = card_selected.html();
     //${listbody}
     $.ajax({
-      url: `/blog-posts/${card_id}`,
+      url: URL +`/blog-posts/${card_id}`,
       method: "DELETE",
       contentType: "application/json",
       success: responseJSON => {
@@ -169,7 +172,7 @@ function updatePost() {
       }
 
       $.ajax({
-        url: `/blog-posts/${SELECTED_ID}`,
+        url: URL +`/blog-posts/${SELECTED_ID}`,
         method: "PUT",
         contentType: "application/json",
         data: JSON.stringify({
