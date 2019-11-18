@@ -1,4 +1,4 @@
-# lab-7
+# laboratory 8
 
 ## Para iniciar el proyecto:
 1. npm install
