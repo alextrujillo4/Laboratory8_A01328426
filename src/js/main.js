@@ -1,4 +1,3 @@
-console.log("Inicio");
 import "../index.html";
 import "../scss/style.scss";
 import { MDCDialog } from "@material/dialog";
