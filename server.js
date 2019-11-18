@@ -4,7 +4,7 @@ let mongoose = require( "mongoose" );
 let morgan = require('morgan');
 let uuidv4 = require('uuid/v4');
 let { PostList } = require('./blog-post-model');
-const { DATABASE_URL, PORT } = require( './blog-post-model' );
+const { DATABASE_URL, PORT } = require( './config' );
 //mongodb+srv://m001-student:antivirus+@cluster0-7yds0.gcp.mongodb.net/PostsDB?retryWrites=true&w=majority
 let app = express();
 let jsonParser = bodyParser.json();
