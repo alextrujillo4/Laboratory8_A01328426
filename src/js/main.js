@@ -50,10 +50,12 @@ function postList() {
     method: "GET",
     dataType: "JSON",
     success: responseJSON => {
-      responseJSON.posts.forEach(element => {
-        console.log(element.title);
-        addValueToList(element);
-      });
+      if (!responseJSON.posts.isEmpty()) {
+        responseJSON.posts.forEach(element => {
+          console.log(element.title);
+          addValueToList(element);
+        });
+      }
     },
     error: function(err) {}
   });
