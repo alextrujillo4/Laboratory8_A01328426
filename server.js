@@ -34,7 +34,7 @@ const Post = {
 ]*/
 //============================================================================
 //============================================================================
-/*function exist(autor){
+function exist(autor){
     for (let index = 0; index < post_list.length; index++) {
         console.log(it.autor)
         if(post_list[index].author == autor){
@@ -101,7 +101,7 @@ function updatePost(uid,title, content, author, date){
         }
     }
     
-}*/
+}
 //============================================================================
 //============================================================================
 app.get("/blog-posts", ( req, res, next ) => {

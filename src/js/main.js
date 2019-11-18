@@ -222,11 +222,10 @@ function dialogShow() {
     dialog.open();
   });
 }
-/*
+
 updatePost();
 deletePost();
 addPost();
 dialogShow();
 showUpdateDialog();
 postList();
-*/
