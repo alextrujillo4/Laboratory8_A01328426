@@ -8,6 +8,8 @@ const { DATABASE_URL, PORT } = require( './config' );
 //mongodb+srv://m001-student:antivirus+@cluster0-7yds0.gcp.mongodb.net/PostsDB?retryWrites=true&w=majority
 let app = express();
 let jsonParser = bodyParser.json();
+mongoose.Promise = global.Promise;
+
 app.use(express.static('public'));//Say to my server were gonna user public directory
 app.use(morgan("dev"));
 
